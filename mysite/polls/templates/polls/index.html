@@ -1,0 +1,33 @@
+<HTML>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<BODY>
+<H1> HAlooooo BOssss</H1>
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+<br></br>
+<H2>Customer</h2>
+
+{% if list_customer %}
+<ul>
+   {% for customer in list_customer %}
+     <li><a href="/polls/{{ customer.id }}/customer/">{{customer.name}}</a></li>
+   {% endfor %}
+</ul>
+{% else %}
+<p>no Customer avalaible.</p>
+{% endif %}
+
+</BODY>
+</HTML>

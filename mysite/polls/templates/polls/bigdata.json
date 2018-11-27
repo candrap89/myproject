@@ -1,0 +1,154 @@
+{
+  "id" : "56e64b08-e541-4e9a-9860-5b1103e94154",
+  "description" : "service ini digunakan untuk menghitung transaksi bulanan, harian dan tahunan, juga jumlah customer",
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.1",
+  "basePath" : "http://10.1.83.153:8081",
+  "baseUrl":"http://10.1.83.153:8081",
+  "resourcePath" : "/polls",
+  "models" : {
+    "Response" : {
+      "required" : [ "startDate", "agregationLevel", "endDate", "query" ],
+      "properties" : {
+        "startDate" : {
+          "type" : "string"
+        },
+        "agregationLevel" : {
+          "type" : "string"
+        },
+        "endDate" : {
+          "type" : "string"
+        },
+        "query" : {
+          "required" : [ "2017-11-01", "2017-10-01", "2017-09-01" ],
+          "properties" : {
+            "2017-11-01" : {
+              "type" : "string"
+            },
+            "2017-10-01" : {
+              "type" : "string"
+            },
+            "2017-09-01" : {
+              "type" : "string"
+            }
+          },
+          "type" : "object"
+        }
+      }
+    },
+    "Request" : {
+      "required" : [ "startDate", "endDate", "agregationLevel" ],
+      "properties" : {
+        "startDate" : {
+          "type" : "string"
+        },
+        "endDate" : {
+          "type" : "string"
+        },
+        "agregationLevel" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ResponseAmount" : {
+      "required" : [ "startDate", "agregationLevel", "endDate", "query" ],
+      "properties" : {
+        "startDate" : {
+          "type" : "string"
+        },
+        "agregationLevel" : {
+          "type" : "string"
+        },
+        "endDate" : {
+          "type" : "string"
+        },
+        "query" : {
+          "required" : [ "2017-11-01", "2017-10-01", "2017-09-01" ],
+          "properties" : {
+            "2017-11-01" : {
+              "type" : "string"
+            },
+            "2017-10-01" : {
+              "type" : "string"
+            },
+            "2017-09-01" : {
+              "type" : "string"
+            }
+          },
+          "type" : "object"
+        }
+      }
+    }
+  },
+  "consumes" : [ ],
+  "produces" : [ ],
+  "name" : "BigData",
+  "summary" : "",
+  "cors" : false,
+  "expired" : false,
+  "deprecated" : false,
+  "retirementDate" : 0,
+  "tags" : { },
+  "apis" : [ {
+    "path" : "/amount/",
+    "operations" : [ {
+      "id" : "432bebdb-1bde-4a7f-9cdd-dddff1e69ac5",
+      "httpMethod" : "POST",
+      "nickname" : "amount",
+      "summary" : "",
+      "notes" : "** Amount**\n\n-------------\nApi ini digunakan untuk menghitung jumlah amount yang dengan agregate tertentu (Bulanan, Harian, tahunan)\n-------------\n\n| Parameter | type                      | Description                  | Format                         |   |\n|-----------|---------------------------|------------------------------|--------------------------------|---|\n| startDate | Datetime-String 24Hformat | example : \"2017-09-26 13:43\" | \"YYYY-mm-DD HH:ss\"             |   |\n| endDate   | Datetime-String 24Hformat | example : \"2017-09-26 13:43\" | \"YYYY-mm-DD HH:ss\"             |   |\n| agregate  | String                    | pengelompokan berdasarkan    | \"monthly\" | \"yearly\" | \"daily\" |   |\n\n*sample request*\n````\n{ \"startDate\" : \"2017-09-26 13:43\" , \"endDate\" : \"2017-11-27 13:43\" , \"agregationLevel\" : \"monthly\" }\n````\n",
+      "responseClass" : "ResponseAmount",
+      "errorResponses" : [ ],
+      "consumes" : [ ],
+      "produces" : [ ],
+      "tags" : { },
+      "cors" : false,
+      "parameters" : [ {
+        "description" : "",
+        "required" : false,
+        "name" : "Authorization",
+        "dataType" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "description" : "",
+        "required" : false,
+        "name" : "body",
+        "dataType" : "Request",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ]
+    } ]
+  }, {
+    "path" : "/customers/",
+    "operations" : [ {
+      "id" : "eaf76aa7-9ab3-458b-b082-05bfc61a129d",
+      "httpMethod" : "POST",
+      "nickname" : "customers",
+      "summary" : "",
+      "notes" : "** Customer **\n\n-------------\nApi ini digunakan untuk menghitung jumlah customer distinct dengan agregate tertentu\n-------------\n\n| Parameter | type                      | Description                  | Format                         |   |\n|-----------|---------------------------|------------------------------|--------------------------------|---|\n| startDate | Datetime-String 24Hformat | example : \"2017-09-26 13:43\" | \"YYYY-mm-DD HH:ss\"             |   |\n| endDate   | Datetime-String 24Hformat | example : \"2017-09-26 13:43\" | \"YYYY-mm-DD HH:ss\"             |   |\n| agregate  | String                    | pengelompokan berdasarkan    | \"monthly\" | \"yearly\" | \"daily\" |   |\n\n*sample request*\n````\n{ \"startDate\" : \"2017-09-26 13:43\" , \"endDate\" : \"2017-11-27 13:43\" , \"agregationLevel\" : \"monthly\" }\n````\n",
+      "responseClass" : "Response",
+      "errorResponses" : [ ],
+      "consumes" : [ ],
+      "produces" : [ ],
+      "tags" : { },
+      "cors" : false,
+      "parameters" : [ {
+        "description" : "",
+        "required" : false,
+        "name" : "Authorization",
+        "dataType" : "string",
+        "paramType" : "header",
+        "allowMultiple" : false
+      }, {
+        "description" : "",
+        "required" : false,
+        "name" : "body",
+        "dataType" : "Request",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ]
+    } ]
+  } ],
+  "type" : "rest"
+}
