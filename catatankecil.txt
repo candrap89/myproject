@@ -122,44 +122,18 @@ noteb00k
 
 
 scp -r newrelic/ apim@APPAPISIT01:/home/apim/
-
-API management
-10.1.83.156:8090
-admin
-P@ssw0rd
-API Manager DMZ: 10.1.129.166:8075
-API MANAGER TZ: 10.1.83.156:8075
-API trafic : 
-Node manager 10.1.129.166
-
-PT --> 10.1.77.150:8075
+============================
+tar -czvf apiportal_20181128 apiportal/
+==================================
 
 idm_cer 
 enable flash disk
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\USBSTOR" /f /v "Start" /t REG_DWORD /d "1"
 
-Andromeda*7
 
-CN=apidev.btpn.com,OU=IT,O=PT Bank BTPN\, Tbk,L=DKI Jakarta,ST=Jakarta Selatan,C=ID
-ABCLtd
-Production
-10.1.90.55
-P@ssw0rd@Production
 
-VPN
-vendor.emerio.vpn
-Btpn1234
-10.1.129.132
-
-P@ssw0rd123
-
-SIT
-https://10.1.83.154:8075/
-apiadmin
-P@ssw0rd
-
-git/andromeda*1 
+github/Andromeda*1 
 
 
 https://api-int.btpn.com:19504/atmbiometric/payment
