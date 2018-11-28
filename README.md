@@ -1,2 +1,2 @@
 # myproject
-Python Project
+Python Django Project
