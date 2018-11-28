@@ -5,6 +5,7 @@ https://www.tecmint.com/install-ntp-server-in-centos/
 https://www.programcreek.com/python/example/85794/http.client.HTTPSConnection ==> sample https connection
 https://www.journaldev.com/19213/python-http-client-request-get-post#getting-the-header-list-from-response ===> connect to back end
 https://codingstartups.com/3-best-practices-better-setting-django-project/ ==> Setting
+https://codingstartups.com/deploy-django-nginx-gunicorn-postgresql-supervisor/
 ====================================================================================
 
 Setup Django
