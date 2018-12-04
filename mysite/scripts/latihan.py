@@ -27,6 +27,23 @@ def run():
   #print("value"+i+": "+str(y))
   print("key {} : {}".format(z,x))
   print("Value {} : {}".format(z,y))
+ 
+ array = [1,2,3,4,5,6,7,8,9,0]
+ print(array[0:2])
+ print(array[-1])
+
+
+ colours = [ "red", "green", "yellow", "blue" ]
+ things = [ "house", "car", "tree" ]
+ coloured_things = [ (x,y) for x in colours for y in things ]
+ print(coloured_things)
+
+ print([i for i in range(array.__len__()) if i % 2==0  ])
+ x=2
+ y=2
+ z=2
+ n=2
+ print ([[a,b,c] for a in range(0,x+1) for b in range(0,y+1) for c in range(0,z+1) if a + b + c != n ])
 
  c = Coba()
  print(c.get_definition("book"))
