@@ -41,6 +41,7 @@ from rest_framework.decorators import api_view
 @api_view(['GET'])
 def push(request):
  transaksis = Transaksi.objects.all()
+ #format date 2018-12-04T08:37:56.563
  tm = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3]
  for i in range(transaksis.__len__()):
   cache.set(transaksis[i].customer_id+"_"+str(tm), transaksis[i], timeout=None)
@@ -66,7 +67,8 @@ def pull(request,id):
    print (json.dumps(final).replace('\\',''))
    return HttpResponse(json.dumps(final).replace('\\',''), content_type='application/json')
   else:
-    datatransaksi = Transaksi.objects.filter(customer_id__startswith=str(id))
+    #datatransaksi = Transaksi.objects.filter(customer_id__startswith=str(id))
+    datatransaksi = Transaksi.objects.filter(customer_id=str(id))
     if datatransaksi:
      for i in range(len(datatransaksi)):
       
