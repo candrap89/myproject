@@ -47,6 +47,38 @@ def run():
  print(array)
  print(array[0:2])
  print(array[-1])
+ print('=================================================================')
+
+ #Sorting mencari nilai terendah ke dua dari bawah
+ students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]] 
+ listmark = []
+ listname = []
+ for name,mark in students:
+  #print(name)
+  #print(mark)
+  listmark.append(mark) 
+ s = sorted(listmark) #another way sorting
+ for name,mark in students:
+  if mark == s[1]:
+    listname.append(name)
+  print(listname)
+ print('=================================================================')
+ #A set is a collection which is unordered and unindexed, and doesnt allow duplicates. In Python, sets are written with curly brackets. A list is a collection which is ordered and changeable. In Python lists are written with square brackets
+
+ print('=========================List comprehension======================')
+ #set
+ s = sorted(set([x[1] for x in students]))
+ #list
+ l = sorted([x[1] for x in students])
+ 
+ secondlowest = [name for name, mark in students if mark == s[1]]
+
+ print(s)
+ print(l)
+ print(secondlowest)
+
+ print('=================================================================')
+
 
  print([i for i in range(array.__len__()) if i % 2==0  ])
  x=2
@@ -57,6 +89,7 @@ def run():
 
  c = Coba()
  print(c.get_definition("book"))
+ print(c.get_function("book"))
 
 
 
@@ -65,6 +98,9 @@ class Coba:
   x = 0
   y = 0
   dicw = {"book":"sheet and paper","rain":"water"}
+
+  def get_function(self, x):
+    return self.dicw.get(x,0)
 
   def asign_x_y(self):
     return u'%s %s' % (self.x, self.y)
