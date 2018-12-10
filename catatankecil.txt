@@ -1,0 +1,338 @@
+MFT Adapter Config
+/apps/gis/si/install/container/Applications/aft/WEB-INF/classes/resources/xml
+/apps/gis/si/install/container/Applications/aft/WEB-INF/classes/resources/AFTExtensionsCustomer.properties
+
+get Public key
+openssl s_client -connect 10.1.129.xxx:2532 | openssl x509 -pubkey > 2532.pem
+openssl s_client -connect 10.1.129.xxx:2532 | openssl x509 -pubkey > 2532.pem
+
+openssl s_client -connect 10.1.129.xxx:2533 | openssl x509 -pubkey > 2533.pem
+openssl s_client -connect 10.1.129.xxx:2533 | openssl x509 -pubkey > 2533.pem
+
+
+Splunk Query
+earliest=-15m@m index=apigateway host="appapiprd0*.corp.bankbtpn.co.id" OR  host="appapidrc0*.corp.bankbtpn.co.id"  | search "*da74250b-bc16-44bf-87e2-4a21a425e00d*"
+============== TCP Dump =============================================================================================
+
+tcpdump -i   <interface>  -A port 8443 -w DMZtest8443.pcap
+ 
+ 4ndromeda*1
+tcpdump -i   <interface>  -A port 8443 -w TZtest8443.pcap
+
+
+/home/apim/jenkins_run/hooks.sh >/dev/null 2>&1
+=====================================================================================================================
+https://www.tecmint.com/install-ntp-server-in-centos/ ==> Join NTP
+=======================================================================================================================
+
+Thanks for the update, that was what I suspect at the end of the current webex, some data looks to be missing in the second datacenter.
+During the webex, we can only see the Warner's screen but not interact with him. What can be done for the second datacenter to get all the data is:
+- From first datacenter, make a backup of kps data using kpsadmin:
+./kpsadmin --username admin --password changeme --group GroupName --name InstanceName backup
+- The backup will be under {apiagteway_home}groups/group-x/instance-y/conf/kps/backup/
+- Copy the backup on the second datacenter (same folder)
+- Cut the link between the 2 datacenters
+- Restore the backup on the second datacenter:
+./kpsadmin --username admin --password changeme --group GroupName --name InstanceNamedc2 clear
+./kpsadmin --username admin --password changeme --group GroupName --name InstanceNamedc2 restore --uuid 067e6162-3b6f-4ae2-a171-2470b63dff00
+(You'll have to adapt the uudi to the one of your backup).
+- Re-establish the link between the 2 datacenters.
+
+ssh tyuniarto@APPAPIDRC01 << EOF
+date > /home/tyuniarto/datetime.log
+EOF
+date > datetime.log
+
+========================================================================================================================
+    http://filedrop//data/public/0d7610e79e84ca03b9a62ea9c9200f43.php?lang=en
+
+	tcpdump -i eth0 -A port 8443 -w testPT.pcap
+	
+	tomcat/s3cret
+
+tcp.analysis.retransmission
+
+
+================run===================================================================
+
+
+filebeat
+./filebeat -c filebeat.yml
+(https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.2.2-linux-x86_64.tar.gz)
+
+build web maven
+web xml nya harus
+
+  <display-name>Archetype Created Web Application</display-name>
+
+Buka port
+firewall-cmd --zone=public --add-port=10502/tcp --permanent
+
+Reload
+firewall-cmd --reload
+firewall-cmd --list-all
+
+Cek port udah buka atau belum
+iptables-save | grep 8075
+
+=================================================================================
+
+export JAVA_HOME=/home/uat01/java18/jre
+
+export JAVA_HOME=/apps/java/java17/jre
+
+export JAVA_HOME=/home/tyuniarto/jre
+
+export JAVA_HOME=/apps/axway/Axway-7.5.3/apigateway/Linux.x86_64/jre
+
+export JAVA_HOME=/apps/axway/Axway-7.5.3/apigateway/platform/jre
+export PATH=$PATH:$JAVA_HOME/bin
+source /etc/profile
+java -jar apiMonitoring-0.0.1-SNAPSHOT.jar /home/apim/monitoring/config.xml 
+
+
+systemctl status jenkins.service
+
+java -jar apiMonitoring-0.0.1-SNAPSHOT.jar /home/apim/monitoring/config.xml 
+
+=================================================================================
+
+jenkisn SIT 20ccc3794e984742950210b47d563d7c
+===================================================================================
+
+
+
+
+scp -r newrelic/ apim@APPAPISIT01:/home/apim/
+
+
+
+idm_cer 
+enable flash disk
+
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\USBSTOR" /f /v "Start" /t REG_DWORD /d "1"
+
+
+
+CN=apidev.btpn.com,OU=IT,O=PT Bank BTPN\, Tbk,L=DKI Jakarta,ST=Jakarta Selatan,C=ID
+
+
+
+
+
+https://api-int.btpn.com:19504/atmbiometric/payment
+
+
+
+firewall-cmd --zone=trusted --add-port=19504/tcp --permanent
+
+
+ 
+NBC0H5QGUFES.corp.bankbtpn.co.id
+=================================================================================
+error maven download
+cd %userprofile%\.m2\repository
+for /r %i in (*.lastUpdated) do del %i
+===============================================================================
+
+
+SFTP
+sftp username@remote_hostname_or_IP
+
+=====================firewall=================================
+
+to start & stop firewalld via service:
+systemctl start firewalld
+systemctl stop firewalld
+
+reload firewalld:
+firewall-cmd --reload
+
+list zones:
+firewall-cmd --get-zones
+
+add port:
+firewall-cmd --zone=public --permanent --add-port=8443/tcp
+firewall-cmd --zone=public --permanent --add-port=8080/tcp
+
+list port that open in public zone:
+firewall-cmd --zone=public --list-ports
+
+To add a source (here 192.168.2.0/24) to a zone (here trusted) permanently, type:
+firewall-cmd --permanent --zone=trusted --add-source=192.168.2.0/24
+
+To get the list of the sources currently bound to a zone (here trusted), type:
+firewall-cmd --permanent --zone=trusted --list-sources
+======================================================================
+
+
+===============================================UPDATE KPS======================================================
+
+PFUT
+https://APPAPISIT01:8090/api/router/service/instance-1/api/kps/SIKP/17b90bf5-8774-4f86-b18b-9b3c8649950c
+
+X-CorrelationID: Id-9e51a158f14ea40f27bdb571 0
+
+{"Description":"partnerConfiguration","GroupConfig":"SIKP","ParamValue":"INI_USER_BTPN","LastUpdateOn":"2017-02-13","ID":"17b90bf5-8774-4f86-b18b-9b3c8649950c","ParamName":"Username"}
+
+https://10.1.83.153:8090/api/router/service/instance-1/api/kps/generalSetting/49894acb-92e7-4ea8-aade-8f6e5fc38ada
+
+
+==================================================================================================================================
+Create Sertificate And assign to security team
+
+create certificate
+keytool -genkey -keyalg RSA -sigalg SHA256withRSA -keysize 2048 -alias apimgrintdev -keystore /home/apim/server_cert_20170504/apimgrintdev.jks -storepass changeme -validity 360
+
+generate csr - csr di kirim ke farchan
+keytool -keystore /home/apim/server_cert_20170504/apimgrintdev.jks -certreq -alias apimgrintdev -keyalg rsa -file /home/apim/server_cert_20170504/apigtwdev.csr
+
+import dari security
+keytool -import -keystore apimgrdev.jks -file apimgrdev.p7b -alias apimgrdev
+
+Get IP addres API GW
+${http.request.clientaddr.getAddress()}
+
+===========================Set https apache===============================================================
+
+./keytool -genkey -alias -appmftsit01 -keyalg RSA -keystore /apps/java/java17/jre/bin/keystore
+
+/
+
+
+==================================================================================================================================
+
+SELECT CONVERT(Datetime, '2011-09-28 18:01:00', 120) -- to convert it to Datetime
+
+SELECT CONVERT( VARCHAR(30), @date ,105) -- italian format [28-09-2011 18:01:00]
++ ' ' + SELECT CONVERT( VARCHAR(30), @date ,108 ) -- full date [with time/minutes/sec]
+
+
+sandbox.bca.co.id/general/info-bca/atm
+
+yum install -y 'ftp://ftp.univie.ac.at/systems/linux/dag/redhat/el6/en/x86_64/extras/RPMS/gitweb-1.7.12.4-1.el6.rfx.x86_64.rpm'
+
+
+select distinct a.CUSTOMER_ID from XLTDBO4.bl1_customer a inner join XLTDBO4.CUSTOMER b on a.CUSTOMER_ID = b.CUSTOMER_ID where a.CYCLE_CODE in ('999');
+
+EXECUTE DBMS_MVIEW.REFRESH('SOAR_RECURRING_MV');
+
+
+
+
+https://APPAPISIT02.dev.corp.btpn.co.id:9501/restwow/findhistory?client_id=2b688c61-9fe7-4764-9b93-6829ab0ce33b&client_secret=b6f62e8b-558a-487c-98c4-1eb8e7fd6b27&code=C8ZUQbXw5g7Z4yJYKtfXUZnOR7I4dn&redirect_uri=http%3A%2F%2F10.1.83.154%3A8089%2Fredirect&grant_type=authorization_code&format=query
+====fix
+https://10.1.83.154:8089/api/oauth/authorize?client_id=2b688c61-9fe7-4764-9b93-6829ab0ce33b&client_secret=b6f62e8b-558a-487c-98c4-1eb8e7fd6b27&code=C8ZUQbXw5g7Z4yJYKtfXUZnOR7I4dn&redirect_uri=http%3A%2F%2F10.1.83.154%3A8089%2Fredirect&grant_type=authorization_code&format=query
+
+======use==================================
+
+ClientId = 2b688c61-9fe7-4764-9b93-6829ab0ce33b
+ClientSecreet =b6f62e8b-558a-487c-98c4-1eb8e7fd6b27 
+
+https://10.1.83.154:8089/api/oauth/authorize?grant_type=client_credentials&client_id=2b688c61-9fe7-4764-9b93-6829ab0ce33b&client_secret=b6f62e8b-558a-487c-98c4-1eb8e7fd6b27
+
+=======================working=================================================================
+========================getToken URL===========================================================
+https://10.1.83.154:8089/api/oauth/token?grant_type=client_credentials&client_id=2b688c61-9fe7-4764-9b93-6829ab0ce33b&client_secret=b6f62e8b-558a-487c-98c4-1eb8e7fd6b27&charset=UTF-8
+
+
+
+======================================Sql Server.=========================================
+
+select a.REFERENCE_NO, a.BIT_7, a.TRX_DATE, a.node 
+from BTPNMid.dbo.AUDIT_TRAIL_TRX a with (nolock)  
+where INSERT_DATE BETWEEN (GETDATE() -2) AND (GETDATE() -1) ;
+==========================================================================================
+
+
+
+http://nbc0h5qgufes.corp.bankbtpn.co.id:8080/quickstart/index.html?mgr=8090
+
+
+mvn archetype:generate -DgroupId=com.Qaflistener.common -DartifactId=Qaflistener -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+mvn eclipse:eclipse -Dwtpversion=2.0
+
+
+
+
+=======================================================================================
+
+mencari file
+http://adi.subekti.web.id/mencari-file-di-unixlinux/
+
+find / -name namafile.txt
+=======================================================================================
+
+crontab mencari file yang lebih dari 1 hari
+
+* * * * * /home/apim/monitoring/*log -mtime +1 -exec rm -f {} \;
+
+===================== sample crontab running 30 detik sekali ==========================
+* * * * * /bin/bash -l -c "/home/apim/jenkins_run/hooks.sh; sleep 30 ; /home/apim/jenkins_run/hooks.sh" > /dev/null 2>&1
+===================================== URL jenkins hook ==========================================================
+
+curl 'http://10.1.83.153:9080/git/notifyCommit?url=ssh://git@10.1.83.227:10022/playground.git'
+
+=======================================================================================
+ps -eo pmem,pcpu,vsize,pid,cmd | sort -k 1 -nr | head -5
+
+intitle:index.of +?last modified? +?parent directory? + "SQL Server 2005"
+
+noteb00k
+=======================================================================================
+20480 MB
+20 GB
+manager-gui
+
+
+ system_memory_in_mb=`free -m | awk '/:/ {print $2;exit}'`
+ system_cpu_cores=`egrep -c 'processor([[:space:]]+):.*' /proc/cpuinfo`
+
+=======================================================================================
+
+grant username and password
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'P@ssw0rd';
+
+
+ps -eo pmem,pcpu,vsize,pid,cmd | sort -k 1 -nr | head -5 
+chage -I -1 -m 0 -M 99999 -E -1 username
+=====================================================================================
+mencari folder terbesar
+du -sh *
+
+du -ah /var/lib | sort -nr | head -n 10
+=====================================================================================
+mencari file terbesar denga path tertentu
+find /path/to/dir/ -printf '%s %p\n'| sort -nr | head -10
+find . -printf '%s %p\n'| sort -nr | head -10
+=====================================================================================
+
+besar folder dalam folder
+du -sch *
+
+find . \! -name '*pattern*' -print0 | xargs --null rm 
+
+=====================================================================================
+cek space DB MySQl server
+
+SELECT DB_NAME() AS DbName, 
+name AS FileName, 
+size/128.0 AS CurrentSizeMB, 
+size/128.0 - CAST(FILEPROPERTY(name, 'SpaceUsed') AS INT)/128.0 AS FreeSpaceMB 
+FROM sys.database_files; 
+
+=====================================================================================
+java -DsocksProxyHost=localhost -DsocksProxyPort=8080 -jar ApacheJMeter.jar
+localproxy ssh -D<8181> tibadmin@10.24.136.26
+
+
+=====================================================================================
+SELECT PROPERTYCLASS,PROPERTYCOMPOSITE,PROPERTYGROUP,NAME,VALUE,TYPE 
+FROM SOAR_SHAREDPROPERTY
+WHERE PROPERTYCLASS='Global' OR (PROPERTYCLASS='Composite' AND PROPERTYCOMPOSITE=?)
+
+select policyid,description,input,output from soar_policyspecification where compositename=?
+and compositeversion=?
+
+select * from SOARTT_GENERALKPI where compositename  = 'cpPartnerMediation' and OPERATIONNAME = 'Startup Procedur';
