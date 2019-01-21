@@ -1,3 +1,7 @@
+
+Kafka config Per topic
+https://kafka.apache.org/0110/documentation.html#topicconfigs
+
 MFT Adapter Config
 /apps/gis/si/install/container/Applications/aft/WEB-INF/classes/resources/xml
 /apps/gis/si/install/container/Applications/aft/WEB-INF/classes/resources/AFTExtensionsCustomer.properties
